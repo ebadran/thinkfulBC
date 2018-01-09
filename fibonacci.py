@@ -1,0 +1,24 @@
+def get_range():
+    return 20
+
+def generate_fib(num):
+    result = []
+    for n in range(num):
+        if n == 0:
+            result.append(0)
+        elif n == 1:
+            result.append(1)
+        else:
+            result.append((n - 2) + (n - 1))
+    return result
+
+def display_values(values):
+    for i in values:
+        print(i)
+
+def main():
+    range_limit = get_range()
+    fibonacci = generate_fib(range_limit)
+    display_values(fibonacci)
+
+main()
