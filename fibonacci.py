@@ -1,13 +1,21 @@
+# Written by Emile Badran on January/2018
+
 def get_range():
     fib_range = input('Please indicate the maximum number for your Fibonacci sequence: ')
     while True:
         try:
             fib_range = int(fib_range)
             break
+        except KeyboardInterrupt:
+            print("Naughty, naughty. We're stopping here and calling the FBI.")
+            return False
         except:
             print("Please insert an integer only.")
             fib_range = input('Please indicate the maximum number for your Fibonacci sequence: ')
-    return int(fib_range)
+    if False:
+        break
+    else:
+        return int(fib_range)
 
 def generate_fib(num):
     result = []
