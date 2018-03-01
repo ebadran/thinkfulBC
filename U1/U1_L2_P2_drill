@@ -69,7 +69,10 @@ LIMIT 3;
 -- Which station is full most often?
 SELECT
 	station_id,
-	COUNT (CASE WHEN docks_available=0 then 1 END) station_full
+	COUNT (
+	CASE WHEN docks_available=0 
+	THEN 1 END
+	) station_full
 FROM status
 GROUP BY station_id
 ORDER BY station_full DESC
@@ -84,7 +87,7 @@ FROM trips
 JOIN stations
 ON stations.name = trips.start_station
 GROUP BY start_station, dockcount
-order by dockcount DESC;
+ORDER BY dockcount DESC;
 
 
 -- What's the length of the longest trip for each day it rains anywhere?
@@ -109,5 +112,5 @@ rainy_trips AS (
 SELECT 
 trip_date,
 max(duration)
-from rainy_trips
+FROM rainy_trips
 GROUP BY 1
