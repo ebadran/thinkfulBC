@@ -1,4 +1,4 @@
---  Convert currency columns to float and date columns to date type:
+--  Create backup tables and convert currency columns to float and date columns to date type:
 CREATE TABLE cp_listings
 AS SELECT * FROM listings;
 
